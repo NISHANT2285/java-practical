@@ -1,0 +1,75 @@
+Practical 5 :-
+
+import java.util.Scanner;
+
+public class ManualSort {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Sorting list of integers
+        System.out.print("Enter number of integers: ");
+        int intCount = scanner.nextInt();
+        int[] intArray = new int[intCount];
+
+        for (int i = 0; i < intCount; i++) {
+            System.out.print("Enter integer " + (i + 1) + ": ");
+            intArray[i] = scanner.nextInt();
+        }
+
+        bubbleSortIntegers(intArray);
+        System.out.println("Sorted integers:");
+        for (int num : intArray) {
+            System.out.print(num + " ");
+        }
+
+        // Sorting list of names
+        System.out.print("\n\nEnter number of names: ");
+        int nameCount = scanner.nextInt();
+        scanner.nextLine(); // consume newline
+        String[] nameArray = new String[nameCount];
+
+        for (int i = 0; i < nameCount; i++) {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            nameArray[i] = scanner.nextLine();
+        }
+
+        bubbleSortStrings(nameArray);
+        System.out.println("Sorted names:");
+        for (String name : nameArray) {
+            System.out.println(name);
+        }
+
+        scanner.close();
+    }
+
+    // Bubble sort for integers
+    public static void bubbleSortIntegers(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // swap
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // Bubble sort for strings
+    public static void bubbleSortStrings(String[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j].compareTo(arr[j + 1]) > 0) {
+                    // swap
+                    String temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
