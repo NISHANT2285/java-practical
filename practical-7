@@ -1,0 +1,76 @@
+class Player {
+    String name;
+    int age;
+
+    void getDetails(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Cricket_player extends Player {
+    int runs;
+
+    void getCricketStats(int r) {
+        runs = r;
+    }
+
+    void displayCricketStats() {
+        display();
+        System.out.println("Runs: " + runs);
+    }
+}
+
+class Football_player extends Player {
+    int goals;
+
+    void getFootballStats(int g) {
+        goals = g;
+    }
+
+    void displayFootballStats() {
+        display();
+        System.out.println("Goals: " + goals);
+    }
+}
+
+class Hockey_player extends Player {
+    int goals;
+
+    void getHockeyStats(int g) {
+        goals = g;
+    }
+
+    void displayHockeyStats() {
+        display();
+        System.out.println("Goals: " + goals);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cricket_player cp = new Cricket_player();
+        cp.getDetails("Virat", 34);
+        cp.getCricketStats(12000);
+        cp.displayCricketStats();
+
+        System.out.println();
+
+        Football_player fp = new Football_player();
+        fp.getDetails("Messi", 36);
+        fp.getFootballStats(800);
+        fp.displayFootballStats();
+
+        System.out.println();
+
+        Hockey_player hp = new Hockey_player();
+        hp.getDetails("Manpreet", 28);
+        hp.getHockeyStats(200);
+        hp.displayHockeyStats();
+    }
+}
