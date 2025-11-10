@@ -1,0 +1,42 @@
+class Rectangle {
+    double length, width, area;
+    String colour;
+
+    void get_length(double l) {
+        length = l;
+    }
+
+    void get_width(double w) {
+        width = w;
+    }
+
+    void get_colour(String c) {
+        colour = c;
+    }
+
+    void find_area() {
+        area = length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Rectangle r1 = new Rectangle();
+        Rectangle r2 = new Rectangle();
+
+        r1.get_length(5.0);
+        r1.get_width(4.0);
+        r1.get_colour("Red");
+        r1.find_area();
+
+        r2.get_length(6.0);
+        r2.get_width(3.0);
+        r2.get_colour("Red");
+        r2.find_area();
+
+        if (r1.area == r2.area && r1.colour.equalsIgnoreCase(r2.colour))
+            System.out.println("Matching Rectangles");
+        else
+            System.out.println("Non-matching Rectangles");
+    }
+}
